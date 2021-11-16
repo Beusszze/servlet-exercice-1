@@ -11,9 +11,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import model.Article;
 import model.User;
 
-@WebServlet(urlPatterns ="/user-info") // declarer mon servlet via annotations
+@WebServlet(urlPatterns ="/first-article") // declarer mon servlet via annotations
 public class ArticleOne extends HttpServlet {
 	
 	public ArticleOne () {
@@ -27,33 +28,18 @@ public class ArticleOne extends HttpServlet {
 		HttpSession session = req.getSession(); 
 		User user = (User) session.getAttribute("USER");
 		
-		req.setAttribute("utilisateur", user.getUsername());
-		req.setAttribute("nbArticles", user.getNbArticles());
-		req.setAttribute("adresseMail", user.getEmailAdress());
-		req.setAttribute("estAdmin", user.isAdmin());
+	
+		User userFirstArticle = new User ("ye", 1, "ye@yezus.com", false); 
+		Article firstArticle = new Article ("titre de mon article 1", "blablabla", userFirstArticle); // simule la récupération de données via bdd
 		
-		req.getRequestDispatcher("/WEB-INF/user-info.jsp").forward(req, resp);
+		
+		req.setAttribute("articleTitle", firstArticle.getTitre());
+		req.setAttribute("articleContent", firstArticle.getContenu());
+		req.setAttribute("articleUser", firstArticle.getUser());
+		req.getRequestDispatcher("/WEB-INF/first-article.jsp").forward(req, resp);
 		}
-		
-		
-	
-		
-	
-	
-//		ServletOutputStream out = resp.getOutputStream();
-//		out.println("<html>");
-//		out.println("<body>");
-//		out.println("<h1> Informations user </h1>");
-//		out.println("<p> Username : " + user.getUsername() + "<br></p>");
-//		out.println("<p> Nombre d'articles : " + user.getNbArticles() + "<br></p>");
-//		out.println("<p> Adresse mail  : " + user.getEmailAdress() + "<br></p>");
-//		out.println("<p> Rôle : " + user.isAdmin() + "<br></p>");
-//		out.println("<a href='logout'> Me déconnecter <br></a>");
-//		out.println("</body>");
-//		out.println("</html>");
 
-	}
-
+}
 
 
 	

@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.User;
 
-@WebServlet(urlPatterns ="/user-info") // declarer mon servlet via annotations
+@WebServlet(urlPatterns ="/article-two") // declarer mon servlet via annotations
 public class ArticleTwo extends HttpServlet {
 	
 	public ArticleTwo () {
@@ -25,16 +25,16 @@ public class ArticleTwo extends HttpServlet {
 						throws ServletException, IOException{ 
 		
 		HttpSession session = req.getSession(); 
-		User user = (User) session.getAttribute("USER");
-		
-		req.setAttribute("utilisateur", user.getUsername());
-		req.setAttribute("nbArticles", user.getNbArticles());
-		req.setAttribute("adresseMail", user.getEmailAdress());
-		req.setAttribute("estAdmin", user.isAdmin());
-		
-		req.getRequestDispatcher("/WEB-INF/user-info.jsp").forward(req, resp);
-		}
-		
+//		Article secondArticle = new Article("titre 2 mon article", "blablabla");
+//		
+//		req.setAttribute("utilisateur", user.getUsername());
+//		req.setAttribute("nbArticles", user.getNbArticles());
+//		req.setAttribute("adresseMail", user.getEmailAdress());
+//		req.setAttribute("estAdmin", user.isAdmin());
+//		
+//		req.getRequestDispatcher("/WEB-INF/user-info.jsp").forward(req, resp);
+//		}
+//		
 		
 	
 		
