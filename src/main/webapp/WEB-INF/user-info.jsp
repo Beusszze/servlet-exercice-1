@@ -12,7 +12,7 @@
 		<p> Nom d'utilisateur : ${utilisateur}</p>
 		<p> Nombre d'articles : ${nbArticles}</p>
 		<p> Adresse e-mail : ${adresseMail}</p>
-		<p> Est admin : ${isAdmin}</p>
+		<p> Est admin : ${estAdmin}</p>
 
 
 

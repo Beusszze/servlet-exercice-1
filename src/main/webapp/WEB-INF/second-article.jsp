@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Mon premier article</title>
+<title>Mon deuxième article</title>
 </head>
 <body>
 
-	<h1> ${articleOneTitle}</h1>
-	<h3>Par l'utilisateur : ${articleOneUser}<br></h3>
-		<p>${articleOneContent}</p>
+	<h1> ${articleTwoTitle}</h1>
+	<h3>Par l'utilisateur : ${articleTwoUser}<br></h3>
+		<p>${articleTwoContent}</p>
 		
 
 
 </body>
-</html>
+</html>  

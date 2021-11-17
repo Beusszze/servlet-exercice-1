@@ -33,14 +33,15 @@ public class ArticleOne extends HttpServlet {
 		Article firstArticle = new Article ("titre de mon article 1", "blablabla", userFirstArticle); // simule la récupération de données via bdd
 		
 		
-		req.setAttribute("articleTitle", firstArticle.getTitre());
-		req.setAttribute("articleContent", firstArticle.getContenu());
-		req.setAttribute("articleUser", firstArticle.getUser());
+		req.setAttribute("articleOneTitle", firstArticle.getTitre());
+		req.setAttribute("articleOneContent", firstArticle.getContenu());
+		req.setAttribute("articleOneUser", firstArticle.getUser());
+		
 		req.getRequestDispatcher("/WEB-INF/first-article.jsp").forward(req, resp);
 		}
 
 }
-
+ 
 
 	
 

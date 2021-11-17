@@ -8,12 +8,11 @@
 </head>
 <body>
 
-	<%-- <h1> Liste des articles (titres)</h1>
-		<ul> titreArticle1 : ${}</ul>
-		<ul> titreArticle2 : ${}</ul>
-		<ul> titreArticle3 : ${}</ul>
+		<h1> Liste des articles</h1>
+			<ul><a href="<%=application.getContextPath()%>/first-article"> ${articleOneTitle} </a></ul>
+			<ul><a href="<%=application.getContextPath()%>/second-article"> ${articleTwoTitle}</a></ul>
 
 
- --%>
+ 
 </body>
 </html>

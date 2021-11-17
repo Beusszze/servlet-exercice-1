@@ -11,9 +11,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import model.Article;
 import model.User;
 
-@WebServlet(urlPatterns ="/article-two") // declarer mon servlet via annotations
+@WebServlet(urlPatterns ="/second-article") // declarer mon servlet via annotations
 public class ArticleTwo extends HttpServlet {
 	
 	public ArticleTwo () {
@@ -25,35 +26,22 @@ public class ArticleTwo extends HttpServlet {
 						throws ServletException, IOException{ 
 		
 		HttpSession session = req.getSession(); 
-//		Article secondArticle = new Article("titre 2 mon article", "blablabla");
-//		
-//		req.setAttribute("utilisateur", user.getUsername());
-//		req.setAttribute("nbArticles", user.getNbArticles());
-//		req.setAttribute("adresseMail", user.getEmailAdress());
-//		req.setAttribute("estAdmin", user.isAdmin());
-//		
-//		req.getRequestDispatcher("/WEB-INF/user-info.jsp").forward(req, resp);
-//		}
-//		
+		User user = (User) session.getAttribute("USER");
 		
 	
+		User userSecondArticle = new User ("shaq", 3, "shaq@gmail.com", false); 
+		Article secondArticle = new Article ("titre 2 mon article", "blablablablabla", userSecondArticle); // creation d'un deuxieme article 
 		
-	
-	
-//		ServletOutputStream out = resp.getOutputStream();
-//		out.println("<html>");
-//		out.println("<body>");
-//		out.println("<h1> Informations user </h1>");
-//		out.println("<p> Username : " + user.getUsername() + "<br></p>");
-//		out.println("<p> Nombre d'articles : " + user.getNbArticles() + "<br></p>");
-//		out.println("<p> Adresse mail  : " + user.getEmailAdress() + "<br></p>");
-//		out.println("<p> Rôle : " + user.isAdmin() + "<br></p>");
-//		out.println("<a href='logout'> Me déconnecter <br></a>");
-//		out.println("</body>");
-//		out.println("</html>");
+		
+		req.setAttribute("articleTwoTitle", secondArticle.getTitre()); 		
+		req.setAttribute("articleTwoContent", secondArticle.getContenu());				// donne 3 attributs a la requête req
+		req.setAttribute("articleTwoUser", secondArticle.getUser());
+		
+		req.getRequestDispatcher("/WEB-INF/second-article.jsp").forward(req, resp);
+				}
 
-	}
 
+}
 
 
 	

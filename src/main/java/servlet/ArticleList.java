@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import model.Article;
 
 @WebServlet(urlPatterns= "/liste-articles")
 public class ArticleList extends HttpServlet {
@@ -21,15 +22,14 @@ public class ArticleList extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		HttpSession session = req.getSession();
-		ArrayList<String> titreArticles = new ArrayList();
 		
 		
 		
+	
 		req.getRequestDispatcher("/WEB-INF/article-list.jsp").forward(req, resp);
 	}
 	
 	
-
 	}
 	
 	

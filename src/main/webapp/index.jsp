@@ -9,7 +9,7 @@
 <body>
 	<h1> Bienvenue sur mon site !</h1>
 	<a href="<%=application.getContextPath()%>/user-info"> Voir mes infos utilisateurs <br></a>
-	<a href="<%=application.getContextPath()%>/liste-articles"> Voir mes articles <br></a>
+	<a href="<%=application.getContextPath()%>/liste-articles"> Voir les articles en ligne <br></a>
 
 </body>
 </html>

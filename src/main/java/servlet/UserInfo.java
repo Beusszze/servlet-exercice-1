@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.User;
 
-@WebServlet(urlPatterns ="/article-one") // declarer mon servlet via annotations
+@WebServlet(urlPatterns ="/user-info") // declarer mon servlet via annotations
 public class UserInfo extends HttpServlet {
 	
 	public UserInfo () {
