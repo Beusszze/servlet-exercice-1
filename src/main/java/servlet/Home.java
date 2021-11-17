@@ -3,7 +3,6 @@ package servlet;
 import java.io.IOException;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,8 +22,9 @@ public class Home extends HttpServlet{
 		
 		HttpSession session = (HttpSession) req.getSession(); // objet session créée et récupéré 
 		session.setAttribute("USER", user); 					// session prend comme attribut pour "USER"  : user
+
 		req.getRequestDispatcher("/index.jsp").forward(req, resp); // envoie requête vers index.jsp
-		
+		//TODO envoyer cette requête par le filter admin
 	}
 	
 
